@@ -1,18 +1,19 @@
 import flask
-import jinja2
 import sqlite3
-import os.path
 from typing import Dict, List
 
 
+# Define the Flask app
 app = flask.Flask(__name__)
 
 
+# Try a Hello web page
 @app.route('/Hello')
 def hello() -> str:
     return "Hello World!"
 
 
+# Develop the students summary table according to jinja2 variables in base.html
 @app.route('/Table')
 def students_summary() -> str:
     query = "select s.Name , s.CWID, g.Course, g.Grade, i.Name from students s join grades g on s.CWID = " \
