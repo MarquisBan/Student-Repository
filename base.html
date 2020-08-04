@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h2>{{ title }}</h2>
+<h3>{{ table_title }}</h3>
+<table border="1">
+    <th>Name</th>
+    <th>CWID</th>
+    <th>Course</th>
+    <th>Grade</th>
+    <th>Instructor</th>
+    {% for student in students_summary %}
+        <tr>
+            <td>{{ student.Name }}</td>
+            <td>{{ student.CWID }}</td>
+            <td>{{ student.Course }}</td>
+            <td>{{ student.Grade }}</td>
+            <td>{{ student.Instructor }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
